@@ -2,14 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const Router = require("../Routes/routes");
+const Router = require("./src/Routes/routes");
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(cors());
-app.use("/", require("../Routes/routes"));
+app.use("/", require("./src/Routes/routes"));
 
 mongoose
   .connect(
